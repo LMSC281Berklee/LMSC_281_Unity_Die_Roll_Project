@@ -4,6 +4,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class DisplayCurrentDieValue : MonoBehaviour
 {
@@ -12,17 +13,23 @@ public class DisplayCurrentDieValue : MonoBehaviour
 	public int currentValue = 1;
 
 
-
 	private bool rollComplete = false;
 
-	public int[] dieResults = new int[20];
+	public int[] dieResults = new int[100];
 
 	private int arrayPosition = 0;
 
+
+	//public int getModeResults;
+
+	//string anotherFileToWriteTo;
+
+
+
 	void Start ()
 	{
-		//JC we will do this after a roll has been completed
-//		CaptureToArray ();
+		//anotherFileToWriteTo= Application.dataPath + "/Resources/ModeData.txt";
+
 	}
 
 	// Update is called once per frame
@@ -71,10 +78,27 @@ public class DisplayCurrentDieValue : MonoBehaviour
 
 //		}
 	}
-		
+//Not sure if this should go in WriteArrayToText script		
+	//public void getMode (){
+		//check if array is complete
+		//if (arrayPosition == dieResults.Length) {
+			//calculate most common result (the mode)
+
+			//Write getModeResults to text file
+			//File.AppendAllText (anotherFileToWriteTo, stringOfValues);
+
+
+		//}	
+		//void OnGUI(){
+			//GUILayout.Label("getModeResults + was rolled the most");
+		//}
+	//}
+
+
 
 	void OnGUI()
 	{
 		GUILayout.Label(currentValue.ToString());
+		Debug.Log ("hello");
 	}
 }
