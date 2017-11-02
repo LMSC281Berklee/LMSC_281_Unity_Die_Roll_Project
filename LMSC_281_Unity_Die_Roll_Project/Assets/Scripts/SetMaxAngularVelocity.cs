@@ -5,6 +5,7 @@ using System.Collections;
 
 public class SetMaxAngularVelocity : MonoBehaviour
 {
+	//this is making sure that the die doesn't just go straight up 
 	public float maxAngularVelocity = 7.0f;
 
 	// Use this for initialization
