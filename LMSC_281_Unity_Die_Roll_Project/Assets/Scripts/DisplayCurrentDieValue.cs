@@ -25,6 +25,9 @@ public class DisplayCurrentDieValue : MonoBehaviour
 		{
 			rollComplete = true;
 			Debug.Log("Die roll complete, die is at rest");
+			//for loop doing 100 rolls
+			//automate another roll
+			//place dievalue into the array position of the counter
 		}
 		else if(!GetComponent<Rigidbody>().IsSleeping())
 		{
