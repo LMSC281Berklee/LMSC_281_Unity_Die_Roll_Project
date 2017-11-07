@@ -1,5 +1,7 @@
 ﻿//example provided by http://www.cookingwithunity.com/
 
+//How about if I change this script here?
+
 using UnityEngine;
 using System.Collections;
 
