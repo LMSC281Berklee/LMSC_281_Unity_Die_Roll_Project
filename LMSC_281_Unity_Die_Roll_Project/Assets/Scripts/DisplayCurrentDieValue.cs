@@ -22,6 +22,7 @@ public class DisplayCurrentDieValue : MonoBehaviour
 		{
 			currentValue = hit.collider.GetComponent<DieValue>().value;
 			GetComponent<CaptureValue> ().currentNumber = hit.collider.GetComponent<DieValue> ().value;
+			GetComponent<CaptureValue> ().CaptureToArray ();
 		}
 
 		if(GetComponent<Rigidbody>().IsSleeping() && !rollComplete)
