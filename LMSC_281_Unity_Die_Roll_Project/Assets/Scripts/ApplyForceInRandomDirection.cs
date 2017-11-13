@@ -4,6 +4,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class ApplyForceInRandomDirection : MonoBehaviour
 {
@@ -18,8 +19,12 @@ public class ApplyForceInRandomDirection : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		//if (Input.GetButtonDown (buttonName))
-		//{
+		if (Input.GetButtonDown (buttonName))
+		{
+			rollTheDie = true;
+		}
+
+	
 		if (rollTheDie)
 			{
 				GetComponent<Rigidbody> ().AddForce (Random.onUnitSphere * forceAmount, forceMode);
@@ -28,7 +33,7 @@ public class ApplyForceInRandomDirection : MonoBehaviour
 			CheckCount();
 
 			}
-		//}
+
 	}
 
 	void CheckCount()

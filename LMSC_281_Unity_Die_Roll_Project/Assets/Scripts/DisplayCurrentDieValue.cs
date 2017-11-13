@@ -21,8 +21,11 @@ public class DisplayCurrentDieValue : MonoBehaviour
 		if(Physics.Raycast(transform.position,Vector3.up,out hit,Mathf.Infinity,dieValueColliderLayer))
 		{
 			currentValue = hit.collider.GetComponent<DieValue>().value;
-			GetComponent<CaptureValue> ().currentNumber = hit.collider.GetComponent<DieValue> ().value;
-			GetComponent<CaptureValue> ().CaptureToArray ();
+			if (GetComponent<ApplyForceInRandomDirection> ().rollTheDie) 
+			{
+				GetComponent<CaptureValue> ().currentNumber = hit.collider.GetComponent<DieValue> ().value;
+				GetComponent<CaptureValue> ().CaptureToArray ();
+			}
 		}
 
 		if(GetComponent<Rigidbody>().IsSleeping() && !rollComplete)

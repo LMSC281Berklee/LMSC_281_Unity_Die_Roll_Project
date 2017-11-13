@@ -14,7 +14,7 @@ public class CaptureValue : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		CaptureToArray ();
+		//CaptureToArray ();
 	}
 	
 	// Update is called once per frame
