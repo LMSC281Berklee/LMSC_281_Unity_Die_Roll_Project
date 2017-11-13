@@ -29,14 +29,12 @@ public class ApplyForceInRandomDirection : MonoBehaviour
 			{
 				GetComponent<Rigidbody> ().AddForce (Random.onUnitSphere * forceAmount, forceMode);
 				GetComponent<Rigidbody> ().AddTorque (Random.onUnitSphere * torqueAmount, forceMode);
-			rollCount = rollCount + 1;
-			CheckCount();
 
 			}
 
 	}
 
-	void CheckCount()
+	public void CheckCount()
 	{
 		if (rollCount > 99) 
 		{

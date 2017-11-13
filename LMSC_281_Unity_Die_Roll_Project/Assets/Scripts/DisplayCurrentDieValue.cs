@@ -4,6 +4,7 @@
 //I am doing another change right here as a test.
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DisplayCurrentDieValue : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class DisplayCurrentDieValue : MonoBehaviour
 	private int currentValue = 1;
 
 	private bool rollComplete = false;
+
+	public Text results;
 
 	// Update is called once per frame
 	void Update ()
@@ -25,6 +28,9 @@ public class DisplayCurrentDieValue : MonoBehaviour
 			{
 				GetComponent<CaptureValue> ().currentNumber = hit.collider.GetComponent<DieValue> ().value;
 				GetComponent<CaptureValue> ().CaptureToArray ();
+				GetComponent<ApplyForceInRandomDirection>().rollCount++;
+				GetComponent<ApplyForceInRandomDirection>().CheckCount();
+
 			}
 		}
 
@@ -32,6 +38,7 @@ public class DisplayCurrentDieValue : MonoBehaviour
 		{
 			rollComplete = true;
 			Debug.Log("Die roll complete, die is at rest");
+			GetComponent<CaptureValue>().DisplayResults();
 		}
 		else if(!GetComponent<Rigidbody>().IsSleeping())
 		{
@@ -43,7 +50,6 @@ public class DisplayCurrentDieValue : MonoBehaviour
 
 	void OnGUI()
 	{
-		GUILayout.Label(currentValue.ToString());
-
+		GUILayout.Label (currentValue.ToString ());
 	}
 }
