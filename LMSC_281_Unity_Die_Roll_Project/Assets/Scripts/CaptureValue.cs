@@ -42,5 +42,6 @@ public class CaptureValue : MonoBehaviour {
 		for (int i = 0; i < allRolls.Length; i++) {
 			results.text = results.text + allRolls [i].ToString () + " , ";
 		}
-	}
+
+}
 }
