@@ -18,7 +18,9 @@ public class ApplyForceInRandomDirection : MonoBehaviour
 	//Allows for autorun functionality when TRUE
 	public bool autoRun = false;
 
-
+	void Start () {
+		Time.timeScale = 5.0F;
+	}
 
 	// Update is called once per frame
 	void Update ()
