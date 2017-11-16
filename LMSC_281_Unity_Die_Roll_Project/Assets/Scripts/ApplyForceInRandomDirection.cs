@@ -12,7 +12,7 @@ public class ApplyForceInRandomDirection : MonoBehaviour
 	public float torqueAmount = 10.0f; // stores the torque factor
 	public ForceMode forceMode; // stores the force mode
 
-	private bool rollComplete = false; //stores if a single roll has completes
+	private bool rollComplete = false; //stores if a single roll has completed
 	private GameController gameController; //to create an relationship with game controller script
 	private DisplayCurrentDieValue displayCurrentValue; //to create an relationship with display current value script
 
@@ -48,7 +48,7 @@ public class ApplyForceInRandomDirection : MonoBehaviour
 
 
 	IEnumerator StartRolling(){
-		yield return new WaitForSeconds(1); //wait foe 1 second
+		yield return new WaitForSeconds(1); //wait for 1 second
 		for (int i=0; i<gameController.rolls; i++) { //repeat the number of times set in GameController script
 			RollDie(); //call function to roll die
 			yield return new WaitForSeconds(5); //wait for five seconds (let the current roll end)

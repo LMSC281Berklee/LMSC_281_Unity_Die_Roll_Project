@@ -24,7 +24,7 @@ public class DisplayCurrentDieValue : MonoBehaviour
 
 
 	void Start(){
-		//create a relationship with gameControlle script
+		//create a relationship with gameController script
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 		if (gameControllerObject != null) {
 			gameController = gameControllerObject.GetComponent<GameController> ();
@@ -98,7 +98,7 @@ public class DisplayCurrentDieValue : MonoBehaviour
 		canvas.SetActive (true); //activate canvas to show results
 	}
 
-	//Coppied from Jeanine Cowen's example
+	//Copied from Jeanine Cowen's example
 	public void WriteToAllResults (string myTextData) {
 		
 		//the WriteAllText will delete any existing text from the file it is writing to
@@ -108,7 +108,7 @@ public class DisplayCurrentDieValue : MonoBehaviour
 		File.AppendAllText ("Assets/Text/AllResults.txt",myTextData);
 	}
 
-	//Coppied from Jeanine Cowen's example
+	//Copied from Jeanine Cowen's example
 	public void WriteToResultsRatio(string myTextData) {
 		
 		//the WriteAllText will delete any existing text from the file it is writing to
