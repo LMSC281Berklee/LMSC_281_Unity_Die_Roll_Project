@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ApplyForceInRandomDirection : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class ApplyForceInRandomDirection : MonoBehaviour
 		 if (mainCounter == 100) {
 			 automateRoll = false;
 		 }
+
 		}
 	}
 
