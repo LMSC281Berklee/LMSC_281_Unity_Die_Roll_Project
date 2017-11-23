@@ -11,36 +11,21 @@ public class ApplyForceInRandomDirection : MonoBehaviour
 	public float torqueAmount = 10.0f;
 	public ForceMode forceMode;
 
-    public bool rollTheDie = false;
-    public int rollCount = 0;
-    public Text startText;
+    public bool autoRun = false;
+    public float timeSpeed = 1.0f;
+
+    void Start()
+    {
+        Time.timeScale = 1.0f * timeSpeed;
+    }
 
     // Update is called once per frame
     void Update ()
 	{
-        if (Input.GetButtonDown (buttonName))
-		{
-            rollTheDie = true;
-            startText.text = "Press 'R' to reset Die Roll";
-        }
-
-        if (GetComponent<Rigidbody>().IsSleeping() && rollTheDie)
+         if (autoRun)
         {
             GetComponent<Rigidbody>().AddForce(Random.onUnitSphere * forceAmount, forceMode);
             GetComponent<Rigidbody>().AddTorque(Random.onUnitSphere * torqueAmount, forceMode);
-        }
-    }
-
-    public void Count()
-    {
-        if (rollCount < 4)
-        {
-            Debug.Log("Roll Number: " + rollCount);
-            rollCount++;
-        }
-        else if (rollCount >= 4)
-        {
-            rollTheDie = false;
         }
     }
 }
